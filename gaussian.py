@@ -28,8 +28,8 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    minx = min(args.centers) - 2*args.common_width
-    maxx = max(args.centers) + 2*args.common_width
+    minx = min(args.centers) - 2*args.common_width + args.shift
+    maxx = max(args.centers) + 2*args.common_width + args.shift
 
     x = numpy.arange(minx, maxx, args.step)
     peaks = tuple([(c,args.common_height,args.common_width) for c in args.centers])
