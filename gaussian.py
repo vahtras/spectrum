@@ -33,7 +33,7 @@ if __name__ == "__main__":
 
     x = numpy.arange(minx, maxx, args.step)
     peaks = tuple([(c,args.common_height,args.common_width) for c in args.centers])
-    g = generate_spectrum(*peaks, shift=arg.shift)
+    g = generate_spectrum(*peaks, shift=args.shift)
     with open(args.output, 'w') as f:
         for x, y in zip(x, g(x)):
             f.write("%f %f\n" %(x, y))
