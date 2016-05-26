@@ -1,8 +1,14 @@
 import numpy
+from math import sqrt, pi
 
 def generate_gaussian(center, height, width):
     def gaussian(x):
         return height*numpy.exp(-((x-center)/width)**2)
+    return gaussian
+
+def generate_gaussian_area(center, area, width):
+    def gaussian(x):
+        return area*numpy.exp(-((x-center)/width)**2)/(width*sqrt(pi))
     return gaussian
 
 def generate_spectrum(*peaks, **kwargs):
